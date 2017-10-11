@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.khanhhuy.lesson2.ContactAdapter;
 import com.example.khanhhuy.lesson2.R;
 import com.example.khanhhuy.lesson2.data.ContactDataSource;
@@ -48,6 +49,8 @@ public class FragmentContact extends Fragment{
         getData();
         mAdapter = new ContactAdapter(mContacts);
         mRecyclerContact.setAdapter(mAdapter);
+
+        Glide.with(this).load("https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678092-sign-add-128.png").into(mImageAdd);
 
         mImageAdd.setOnClickListener(new View.OnClickListener() {
             @Override
