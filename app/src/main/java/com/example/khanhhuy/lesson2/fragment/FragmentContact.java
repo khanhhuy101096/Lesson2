@@ -12,7 +12,7 @@ import com.example.khanhhuy.lesson2.R;
  * Created by yeu_thuong on 10/9/2017.
  */
 
-public class FragmentContact extends Fragment {
+public class FragmentContact extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.tab_fragment_contact, container, false);

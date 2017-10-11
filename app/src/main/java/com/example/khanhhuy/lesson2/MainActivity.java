@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mTabLayout = (TabLayout) findViewById(R.id.tab_title);
         mViewPager = (ViewPager) findViewById(R.id.view_fragment);
+
         mTabLayout.addTab(mTabLayout.newTab().setText("Love"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Contact"));
         mTabLayout.addTab(mTabLayout.newTab().setText("Pesonal"));
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
         mPagerAdapter = new PagerAdapter(getSupportFragmentManager(),mTabLayout.getTabCount());
         mViewPager.setAdapter(mPagerAdapter);
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -42,5 +42,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
 }
