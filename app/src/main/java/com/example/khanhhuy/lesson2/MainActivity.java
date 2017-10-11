@@ -4,9 +4,17 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
+import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.khanhhuy.lesson2.data.ContactDataSource;
+import com.example.khanhhuy.lesson2.data.ContactRepository;
+import com.example.khanhhuy.lesson2.data.model.Contact;
+
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity{
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
