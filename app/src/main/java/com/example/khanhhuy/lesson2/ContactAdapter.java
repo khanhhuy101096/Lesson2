@@ -1,7 +1,13 @@
 package com.example.khanhhuy.lesson2;
 
+import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -28,6 +34,28 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             mLayoutInflater = LayoutInflater.from(parent.getContext());
         }
         View v = mLayoutInflater.inflate(R.layout.item_contact,parent,false);
+        v.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopupMenu popupMenu = new PopupMenu(mLayoutInflater.getContext(),v);
+                popupMenu.inflate(R.menu.menu_control);
+                popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.item_edit:
+                                Log.e("khanhhuy","Edit");
+                                break;
+                            case R.id.item_delete:
+                                Log.e("khanhhuy","Delete");
+                                break;
+                        }
+                        return false;
+                    }
+                });
+                popupMenu.show();
+            }
+        });
         return new ViewHolder(v);
     }
 
@@ -56,6 +84,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             mTextName.setText(contact.getName());
             mTextPhone.setText(contact.getPhone());
         }
-
     }
+
 }
