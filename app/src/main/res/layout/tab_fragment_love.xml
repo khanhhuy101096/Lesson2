@@ -1,16 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="2"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/textGlide"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Glide"
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            />
 
-    <TextView
-        android:id="@+id/text_love"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Tab 1"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        <ImageView
+            android:id="@+id/image_glide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_add_circle_outline"
+            android:layout_below="@+id/textGlide"
+            />
 
-</RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <TextView
+            android:id="@+id/textPicasso"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="Piasso"
+            android:textSize="24sp"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            />
+
+        <ImageView
+            android:id="@+id/image_picasso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_add_circle_outline"
+            android:layout_below="@+id/textPicasso"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
